@@ -1,3 +1,14 @@
+const http = require("http");
+
+const server = http.createServer((req,res) => {
+  res.writeHead(200,{"Content-Type": "text/plain"});
+  res.end("Hello worls!");
+});
+
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => console.log("Server is runnin on port 3000"));
+
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore} = require('firebase-admin/firestore');
 const TelegramBot = require('node-telegram-bot-api');
